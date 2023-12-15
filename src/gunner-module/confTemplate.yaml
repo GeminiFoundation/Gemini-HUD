@@ -1,0 +1,252 @@
+name: GHUD Gunner module v1.4.9
+pvp: true
+
+slots:
+    core:
+        class: CoreUnit
+    weapon:
+        class: WeaponUnit
+        select: manual
+    radar:
+        class: RadarPVPUnit
+        select: manual
+    databank:
+        class: DatabankUnit
+        select: manual
+    screen:
+        class: ScreenUnit
+        select: manual    
+
+handlers:
+    unit:
+        onStart:
+            lua: |
+{{unit.onStart.lua}}
+        onStop:
+            lua: |
+{{unit.onStop.lua}}
+        onTimer:
+            args: ['hud']
+            lua: |
+{{unit.onTimer.hud.lua}}
+        onTimer:
+            args: ['vectorhud']
+            lua: |
+{{unit.onTimer.vectorhud.lua}}
+        onTimer:
+            args: ['logger']
+            lua: |
+{{unit.onTimer.logger.lua}}
+        onTimer:
+            args: ['marker']
+            lua: |
+{{unit.onTimer.marker.lua}}
+        onTimer:
+            args: ['cleaner']
+            lua: |
+{{unit.onTimer.cleaner.lua}}
+    radar_1:
+        onEnter(id):
+            lua: |
+{{radar_1.onEnter.lua}}
+        onLeave(id):
+            lua: |
+{{radar_1.onLeave.lua}}
+    radar_2:
+        onEnter(id):
+            lua: |
+{{radar_2.onEnter.lua}}
+        onLeave(id):
+            lua: |
+{{radar_2.onLeave.lua}}
+    weapon_1:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_1,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    weapon_2:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_2,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    weapon_3:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_3,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    weapon_4:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_4,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    weapon_5:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_5,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    weapon_6:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_6,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    weapon_7:
+        onHit(targetId,damage):
+            lua: |
+                local damage1 = math.floor(damage)
+                local id = targetId
+                hitFnc(weapon_7,damage1,id)
+        onMissed(targetId):
+            lua: |
+{{weapon.onMissed.lua}}
+        onElementDestroyed(targetId,elementId):
+            lua: |
+{{weapon.onDestroyedElement.lua}}
+    construct:
+        onPvPTimer(active):
+            lua: |
+{{construct.onPvPTimer(active).lua}}
+    system:
+        onUpdate:
+            lua: |
+{{system.onUpdate.lua}}
+        onActionStart:
+            args: [option1]
+            lua: |
+{{system.onActionStart.option1.lua}}
+        onActionStart:
+            args: [option2]
+            lua: |
+{{system.onActionStart.option2.lua}}
+        onActionStart:
+            args: [option3]
+            lua: |
+{{system.onActionStart.option3.lua}}
+        onActionStart:
+            args: [option4]
+            lua: |
+{{system.onActionStart.option4.lua}}
+        onActionLoop:
+            args: [option5]
+            lua: |
+{{system.onActionLoop.option5.lua}}
+        onActionStop:
+            args: [option5]
+            lua: |
+{{system.onActionStop.option5.lua}}
+        onActionStart:
+            args: [straferight]
+            lua: |
+{{system.onActionStart.straferight.lua}}
+        onActionStop:
+            args: [straferight]
+            lua: |
+{{system.onActionStop.straferight.lua}}
+        onActionStart:
+            args: [strafeleft]
+            lua: |
+{{system.onActionStart.strafeleft.lua}}
+        onActionStop:
+            args: [strafeleft]
+            lua: |
+{{system.onActionStop.strafeleft.lua}}
+        onActionStart:
+            args: [up]
+            lua: |
+{{system.onActionStart.up.lua}}
+        onActionStop:
+            args: [up]
+            lua: |
+{{system.onActionStop.up.lua}}
+        onActionStart:
+            args: [down]
+            lua: |
+{{system.onActionStart.down.lua}}
+        onActionStop:
+            args: [down]
+            lua: |
+{{system.onActionStop.down.lua}}
+        onActionStart:
+            args: [groundaltitudeup]
+            lua: |
+{{system.onActionStart.groundaltitudeup.lua}}
+        onActionStart:
+            args: [groundaltitudedown]
+            lua: |
+{{system.onActionStart.groundaltitudedown.lua}}
+        onActionStart:
+            args: [antigravity]
+            lua: |
+{{system.onActionStart.antigravity.lua}}
+        onActionStart:
+            args: [booster]
+            lua: |
+{{system.onActionStart.booster.lua}}
+        onActionStart:
+            args: [gear]
+            lua: |
+{{system.onActionStart.gear.lua}}
+        onActionStop:
+            args: [gear]
+            lua: |
+{{system.onActionStop.gear.lua}}
+        onActionStart:
+            args: [lalt]
+            lua: |
+{{system.onActionStart.lalt.lua}}
+        onActionStop:
+            args: [lalt]
+            lua: |
+{{system.onActionStop.lalt.lua}}
+        onActionStart:
+            args: [lshift]
+            lua: |
+{{system.onActionStart.lshift.lua}}
+        onActionStop:
+            args: [lshift]
+            lua: |
+{{system.onActionStop.lshift.lua}}
+        onInputText(text):
+            lua: |
+{{system.onInputText.lua}}

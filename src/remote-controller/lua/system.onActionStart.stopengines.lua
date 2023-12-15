@@ -1,0 +1,1 @@
+if lalt == false then Nav.axisCommandManager:resetCommand(axisCommandId.longitudinal) end
